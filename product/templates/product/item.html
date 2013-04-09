@@ -1,0 +1,141 @@
+<html>
+	<title>{{item.name}}</title>
+		<head>
+		<center>
+			<img src="http://static.guim.co.uk/sys-images/Guardian/About/General/2011/9/7/1315413211669/A-fruit-bowl-007.jpg" alt="Fruit" width="550" height="180">
+		</center>
+		<style>
+body
+{
+background-color:#FFA500;
+}
+h1
+{
+color:#FF4500;
+text-align:center;
+}
+div.h1 
+{	
+	border-radius:30px;
+	margin:auto;
+	width:250px;	
+	background:linen;
+	margin-top:4em;	
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	padding:0.5em 0;
+	font-size: 15px;	
+}
+div.body
+{
+	text-align:center;
+	width:900px;	
+	margin:auto;
+	background: white;
+	border-radius:10px;
+	margin-bottom:3em;
+	margin-top:3em;	
+	padding:0.5em 0;
+}
+div.nav
+{
+	margin-bottom:2em;
+	margin-top:1em;	
+	margin-right:1em;
+	width:150px;
+	text-align:center;
+	background:#32CD32;
+	margin:rigth;
+	border-radius:5px;
+	padding:0.5em 0;
+	float:right;
+	position:absolute;
+	top:0px;
+	right: 0px;
+}
+div.nav2
+{
+	margin-bottom:2em;
+	margin-top:1em;	
+	margin-left:1em;
+	width:150px;
+	text-align:center;
+	background:#32CD32;
+	margin:rigth;
+	border-radius:5px;
+	padding:0.5em 0;
+	float:right;
+	position:absolute;
+	top:0px;
+	left: 0px;
+}
+a { 
+	color:#000000;
+	font-family:Arial; 
+}
+a:visited { 
+	color:#000000; 
+	font-family:Arial; 
+}
+h2{
+	color:#000000;
+	font-size: 25px;
+	
+}
+.flotte 
+{
+float:left;
+margin-top: 4em;
+margin-left:10em;
+}
+.price
+{
+float:left;
+margin-left:12em;
+}
+div.des
+{
+padding:0.5em 0;
+width:500px;
+	border-radius:10px;
+	text-align:left;
+float:left;
+}
+
+</style>
+		</head>
+		
+		<div class="nav">
+		<nav>
+			<a href="/products/new_item/">Add a new item</a><br></br>
+			{% for item in list %}
+			<a href="/products/{{ item.id }}/">{{item.name}}</a><br></br>
+			{% endfor %}
+		</nav>
+		</div>
+		<div class="nav2">
+				<nav>
+					<a href="/products/Home/">Home</a> |
+					<a href="/products/all_items/">All items</a>
+				</nav>
+		</div>
+		<body>				
+			<p class="flotte">
+			<img src={{item.photo}} width="250" height="250"/>
+			</p>
+			<p style="line-height:65px;">
+			<div class="h1">
+				<h1>{{item.name}}</h1>
+			</div>
+			</p>
+			<br></br>
+			<p class="price">
+			<h2>Price: {{item.price}} €</h2>
+			</p>
+			<br></br>
+			<div class="des">
+			<h2>Description:</h2> <p>{{item.description}} </p>
+			</div>
+		</body>
+
+</html>
