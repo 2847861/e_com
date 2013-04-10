@@ -79,6 +79,14 @@ a:visited {
 	color:#000000; 
 	font-family:Arial; 
 }
+.a2{ 
+	color:#FF0000;
+	font-family:Arial; 
+}
+.a2:visited { 
+	color:#FF0000; 
+	font-family:Arial; 
+}
 h2{
 	color:mediumorchid;
 	font-size: 25px;
@@ -107,7 +115,7 @@ font-size:20px;
 			</div>
 		<body>
 			{% for item in list %}
-			<li><h3><a href="/products/{{ item.id }}/">{{item.name}}</a></h3></li>			
+			<h3><li><a class="a2" href="/products/{{ item.id }}/">{{item.name}}</a></li></h3>			
 			{% endfor %}
 		</body>
 </html>

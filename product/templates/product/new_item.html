@@ -95,7 +95,10 @@ font-size:20px;
 			</div>
 			<div class="nav1">
 				<nav>
-					<a href="/products/new_item/">Add a new item</a>
+					<a href="/products/new_item/">Add a new item</a><br></br>
+					{% for item in list %}
+					<a href="/products/{{ item.id }}/">{{item.name}}</a><br></br>
+					{% endfor %}
 				</nav>
 			</div>
 			<div class="nav2">
@@ -106,7 +109,7 @@ font-size:20px;
 			</div>
 			<body>
 			<div class="body">
-				<form action="/products/new_item/" method="post">{% csrf_token %}
+				<form method="post">{% csrf_token %}
 					{{form.as_p}}
 					<input type="submit" value="Submit" />
 				</form>

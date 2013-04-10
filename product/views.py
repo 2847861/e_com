@@ -15,8 +15,7 @@ def new_item(request):
             photo = form.cleaned_data['photo']
             description = form.cleaned_data['description']             
             instance= form.save()
-            it = get_object_or_404(Items, pk=instance.id)
-            return render_to_response('product/item.html', { 'item': it }, RequestContext(request))# Redirect after POST		
+            return HttpResponseRedirect('/products/%s/'% instance.id)# Redirect after POST		
 	else:
          form = Items_F(request.POST) # An unbound form
     return render_to_response('product/new_item.html', {'form':form}, RequestContext(request))
